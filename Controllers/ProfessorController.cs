@@ -26,27 +26,27 @@ namespace ProjetoIntegrador.Controllers
         {
             return _context.Professores;
         }
-        [HttpGet("{crn}")]
-        public IActionResult GetProfessorByCpf(string crn)
+        [HttpGet("{cpf}")]
+        public IActionResult GetProfessorByCpf(string cpf, [FromBody] LoginProfessorDto professorDto)
         {
             try
             {
-                Professor professorGet = _context.Professores.FirstOrDefault(professorGet => professorGet.Crn.Equals(crn));
-
-                if (professorGet != null)
+                Professor professorLogin = _context.Professores.FirstOrDefault(professorLogin => professorLogin.Cpf.Equals(cpf));
+                if(professorLogin == null)
                 {
-                    ReadProfessorDto professorDto = _mapper.Map<ReadProfessorDto>(professorGet);
-
-                    return Ok(professorDto);
+                    return NotFound();
+                } else if (!professorDto.Senha.Equals(professorLogin.Senha)) {
+                    return Unauthorized();
+                } else
+                {
+                    ReadProfessorDto professorDtoLogin = _mapper.Map<ReadProfessorDto>(professorLogin);
+                    return Ok(professorDtoLogin);
                 }
-
-                return NotFound();
             }
             catch (Exception error)
             {
                 return BadRequest(error.Message);
             }
-
         }
         [HttpPost]
         public IActionResult AddProfessor([FromBody] CreateProfessorDto professorDto)

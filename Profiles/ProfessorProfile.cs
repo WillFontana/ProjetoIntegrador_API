@@ -22,6 +22,7 @@ namespace ProjetoIntegrador.Profiles
                 .MapFrom(professor => professor.Pendencias.Select
                 (pendencia => new { pendencia.Id, pendencia.Aluno, pendencia.Status })));
             CreateMap<UpdateProfessorDto, Professor>();
+            CreateMap<LoginProfessorDto, Professor>();
         }
     }
 }

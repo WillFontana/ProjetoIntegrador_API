@@ -19,7 +19,6 @@ namespace ProjetoIntegrador.Data
             builder.Entity<Professor>().HasIndex(professor => professor.Crn).IsUnique();
             builder.Entity<Professor>().HasIndex(professor => professor.Cpf).IsUnique();
             builder.Entity<Aluno>().HasIndex(aluno => aluno.Cpf).IsUnique();
-            builder.Entity<Usuario>().HasIndex(usuario => usuario.Crn).IsUnique();
             // Relacionaments 1-n (Enuns)
             // O professor tem um grau, que possui vários professores, que possuírem o id desse grau
             builder.Entity<Professor>().HasOne(professor => professor.Grau).WithMany(grau => grau.Professores).HasForeignKey(professor => professor.GrauId);
@@ -47,7 +46,5 @@ namespace ProjetoIntegrador.Data
         public DbSet<Grau> Graus { get; set; }
         public DbSet<Escolaridade> Escolaridades { get; set; }
         public DbSet<MateriasPorProfessor> MateriasPorProfessors { get; set; }
-        public DbSet<Usuario> Usuarios { get; set; }
-
     }
 }

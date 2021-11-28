@@ -4,14 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProjetoIntegrador.Data.Dtos.UsuarioDtos
+namespace ProjetoIntegrador.Data.Dtos.ProfessorDtos
 {
-    public class UsuarioDto
+    public class LoginProfessorDto
     {
-        // ------------------------------ CRN
-        [Required(ErrorMessage = "O CRN é um campo obrigatório!")]
-        public string Crn { get; set; }
         [Required(ErrorMessage = "A senha é um campo obrigatório!")]
+        [MinLength(6, ErrorMessage = "A senha deve possuir no mínimo 6 caracteres!")]
+        [MaxLength(12, ErrorMessage = "A senha deve possuir no máximo 12 caracteres!")]
         public string Senha { get; set; }
     }
 }
