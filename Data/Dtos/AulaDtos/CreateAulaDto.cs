@@ -14,6 +14,9 @@ namespace ProjetoIntegrador.Data.Dtos.MateriaDtos
         // --- Data Final
         [Required(ErrorMessage = "A data final é um campo obrigatorio")]
         public string dataFinal { get; set; }
+        // --- Hora
+        [Required(ErrorMessage = "O remarque é um campo obrigatório")]
+        public string Hora { get; set; }
         // --- Remarcada
         [Required(ErrorMessage = "O remarque é um campo obrigatório")]
         public bool remarque { get; set; }

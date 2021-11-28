@@ -17,6 +17,9 @@ namespace ProjetoIntegrador.Models
         // --- Data Final
         [Required(ErrorMessage = "A data final é um campo obrigatorio")]
         public string DataFinal { get; set; }
+        // --- Hora
+        [Required(ErrorMessage = "O remarque é um campo obrigatório")]
+        public string Hora { get; set; }
         // --- Remarcada
         [Required(ErrorMessage = "O remarque é um campo obrigatório")]
         public bool Remarque { get; set; }
