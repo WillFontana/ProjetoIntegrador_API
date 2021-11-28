@@ -17,6 +17,9 @@ namespace ProjetoIntegrador.Data.Dtos.MateriaDtos
         // --- Remarcada
         [Required(ErrorMessage = "O remarque é um campo obrigatório")]
         public bool remarque { get; set; }
+        // --- Valor
+        [Required(ErrorMessage = "O remarque é um campo obrigatório")]
+        public int Valor { get; set; }
         // -- status 
         [Required(ErrorMessage = "O status é um campo obrigatorio")]
         public string status { get; set; }

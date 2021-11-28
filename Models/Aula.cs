@@ -20,6 +20,9 @@ namespace ProjetoIntegrador.Models
         // --- Remarcada
         [Required(ErrorMessage = "O remarque é um campo obrigatório")]
         public bool Remarque { get; set; }
+        // --- Valor
+        [Required(ErrorMessage = "O remarque é um campo obrigatório")]
+        public int Valor { get; set; }
         // -- status 
         [Required(ErrorMessage = "O status é um campo obrigatorio")]
         public string Status { get; set; }
