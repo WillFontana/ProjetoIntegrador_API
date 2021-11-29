@@ -8,6 +8,7 @@ namespace ProjetoIntegrador.Data.Dtos.ProfessorDtos
 {
     public class ReadProfessorDto
     {
+        public int Id { get; set; }
         // ------------------------------ Nome
         [Required(ErrorMessage = "O nome é um campo obrigatório!")]
         [MinLength(3, ErrorMessage = "O nome inserido não é valido!")]

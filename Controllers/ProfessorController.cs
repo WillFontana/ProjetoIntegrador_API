@@ -26,7 +26,7 @@ namespace ProjetoIntegrador.Controllers
         {
             return _context.Professores;
         }
-        [HttpGet("{cpf}")]
+        [HttpPost("{cpf}")]
         public IActionResult GetProfessorByCpf(string cpf, [FromBody] LoginProfessorDto professorDto)
         {
             try
